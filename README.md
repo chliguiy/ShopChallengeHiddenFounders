@@ -1,5 +1,6 @@
-# lara-vue-auth
-A repo for laravel vue authentication tutorial.
+# ShopChallengeHiddenFounders
+
+ laravel vue js 
 
 # How to run 
 1. Clone the repo
