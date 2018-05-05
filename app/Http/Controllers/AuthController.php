@@ -68,7 +68,7 @@ $user = Auth::User();
 public function like(Request $request){
   
      $user_id= Auth::user()->id;
-        \DB::table('voteshop')->insert(array('shop_id'=>$request->get('shop_id'),'user_id'=>$user_id,'vote'=>1,'date_vote'=>date('ymdhis')));
+        \DB::table('voteshop')->insert(array('shop_id'=>$request->get('shop_id'),'user_id'=>$user_id,'vote'=>1,'date_vote'=>date('ymdHis')));
     $prefered=  \DB::table('prefered')->where(array('user_id'=>$user_id,'shop_id'=>$request->get('shop_id')))->get();
 if(count($prefered)==0){
 
@@ -80,7 +80,7 @@ if(count($prefered)==0){
     public function unlike(Request $request){
 
          $user_id= Auth::user()->id;
-        \DB::table('voteshop')->insert(array('shop_id'=>$request->get('shop_id'),'user_id'=>$user_id,'vote'=>0,'date_vote'=>date('ymdhis')));
+        \DB::table('voteshop')->insert(array('shop_id'=>$request->get('shop_id'),'user_id'=>$user_id,'vote'=>0,'date_vote'=>date('ymdHis')));
       $prefered=  \DB::table('prefered')->where(array('user_id'=>$user_id,'shop_id'=>$request->get('shop_id')))->get();
 if(count($prefered)>0){
 
