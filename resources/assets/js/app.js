@@ -8,17 +8,33 @@ import Home from './components/Home.vue';
 import Register from './components/Register.vue';
 import Login from './components/Login.vue';
 
+import Preferred from './components/Preferred.vue';
+
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
+import BootstrapVue from 'bootstrap-vue'
 
-axios.defaults.baseURL = 'http://localhost:8004/api';
+Vue.use(BootstrapVue);
 
+axios.defaults.baseURL = 'http://localhost:8000/api';
+Vue.prototype.$user_id=null; 
 const router = new VueRouter({
     routes: [
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: Dashboard,
+              meta: {
+                auth: true
+            }
+        },
+          {
+            path: '/preferred',
+            name: 'preferred',
+            component: Preferred,
+              meta: {
+                auth: true
+            }
         },
         {
             path: '/register',
@@ -37,9 +53,9 @@ const router = new VueRouter({
             }
         },
         {
-            path: '/dashboard',
-            name: 'dashboard',
-            component: Dashboard,
+            path: '/newshop',
+            name: 'newshop',
+            component: Home,
             meta: {
                 auth: true
             }

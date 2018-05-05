@@ -38,12 +38,15 @@
                         email: app.email,
                         password: app.password
                     }, 
-                    success: function () {},
+                    success: function (data) {
+
+                        this.$user_id=data.user;
+                    },
                     error: function (resp) {
                         alert(resp.response.data.msg)
                     },
                     rememberMe: true,
-                    redirect: '/dashboard',
+                    redirect: '/',
                     fetchUser: true,
                 });             
             },

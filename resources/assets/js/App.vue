@@ -4,8 +4,16 @@
             <nav>
                 <ul class="list-inline">
                     <li>
-                        <router-link :to="{ name: 'home' }">Home</router-link>
+                        <router-link :to="{ name: 'home' }">NEARBY SHOPS</router-link>
                     </li>
+                      <li>
+                        <router-link :to="{ name: 'preferred' }">Preferred shops</router-link>
+                    </li>
+                      <li>
+
+                        <router-link :to="{ name: 'newshop' }">New shop</router-link>
+                    </li>
+                  
                     <li v-if="!$auth.check()" class="pull-right">
                         <router-link :to="{ name: 'login' }">Login</router-link>
                     </li>
